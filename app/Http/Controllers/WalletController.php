@@ -10,7 +10,7 @@ class WalletController extends Controller
     public function index()
     {
         $data = [
-            'wallet' => Wallet::latest()->get(),
+            'wallets' => Wallet::latest()->get(),
         ];
         return view('admin.wallet.index', $data);
     }
@@ -23,7 +23,10 @@ class WalletController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'wallets' => Wallet::latest()->get(),
+        ];
+        return view('admin.wallet.create', $data);
     }
 
     /**

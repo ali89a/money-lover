@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\User;
 use App\Models\Role;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Brian2694\Toastr\Facades\Toastr;
-use DB;
 
 class UserController extends Controller
 {
@@ -52,7 +53,7 @@ class UserController extends Controller
 
         } catch (\Exception $e) {
             DB::rollBack();
-            \Log::emergency("File:" . $e->getFile() . "Line:" . $e->getLine() . "Message:" . $e->getMessage());
+            Log::emergency("File:" . $e->getFile() . "Line:" . $e->getLine() . "Message:" . $e->getMessage());
             Toastr::info('Something went wrong!.', '', ["progressbar" => true]);
             return back();
         }
@@ -101,7 +102,7 @@ class UserController extends Controller
             return redirect()->route('user.index');
         } catch (\Exception $e) {
             DB::rollBack();
-            \Log::emergency("File:" . $e->getFile() . "Line:" . $e->getLine() . "Message:" . $e->getMessage());
+            Log::emergency("File:" . $e->getFile() . "Line:" . $e->getLine() . "Message:" . $e->getMessage());
             $output = ['success' => 0,
                 'msg' => __("messages.something_went_wrong")
             ];

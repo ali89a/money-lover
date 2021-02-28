@@ -4,11 +4,14 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BudgetController;
 use App\Http\Controllers\WalletController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +32,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('categories', CategoryController::class);
+Route::resource('budgets', BudgetController::class);
+Route::resource('transactions', TransactionController::class);
+Route::resource('payments', PaymentController::class);
 Route::resource('accounts', AccountController::class);
 Route::resource('wallets', WalletController::class);
 Route::resource('contacts', ContactController::class);

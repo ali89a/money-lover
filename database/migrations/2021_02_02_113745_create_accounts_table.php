@@ -15,6 +15,15 @@ class CreateAccountsTable extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('account_no');
+            $table->unsignedBigInteger('bank_id')->nullable();
+            $table->foreign('bank_id')->references('id')->on('banks')->onDelete('restrict');
+            $table->unsignedBigInteger('creator_user_id')->nullable();
+            $table->foreign('creator_user_id')->references('id')->on('users')->onDelete('restrict');
+            $table->unsignedBigInteger('updator_user_id')->nullable();
+            $table->foreign('updator_user_id')->references('id')->on('users')->onDelete('restrict');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

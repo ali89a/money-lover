@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>{{ config('app.name') }} | Reports</title>
+	<title> @yield('title')| {{ config('app.name') }}</title>
 	<!--begin::Fonts-->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 	<!--end::Fonts-->
@@ -473,9 +473,9 @@
 										<span class="menu-text">Balance Overview</span>
 									</a>
 								</li>
-								<li class="menu-item menu-item-submenu menu-item-rel {{ (Request::segment(1) == 'accounts' )?'menu-item-here':''}}" data-menu-toggle="click" aria-haspopup="true">
+								<li class="menu-item menu-item-submenu menu-item-rel {{ (Request::segment(1) == 'wallets'||Request::segment(1) == 'accounts'||Request::segment(1) == 'transactions' )?'menu-item-here':''}}" data-menu-toggle="click" aria-haspopup="true">
 									<a href="javascript:;" class="menu-link menu-toggle">
-										<span class="menu-text">Account</span>
+										<span class="menu-text">Menu</span>
 										<span class="menu-desc"></span>
 										<i class="menu-arrow"></i>
 									</a>
@@ -489,7 +489,7 @@
 													<span class="menu-text">Wallet</span>
 												</a>
 											</li>
-											<li class="menu-item  {{ (Request::segment(2) == 'accounts' )?'menu-item-here':''}}" aria-haspopup="true">
+											<li class="menu-item  {{ (Request::segment(1) == 'accounts' )?'menu-item-here':''}}" aria-haspopup="true">
 												<a href="{{route('accounts.index')}}" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
@@ -497,24 +497,24 @@
 													<span class="menu-text">Account</span>
 												</a>
 											</li>
-											<li class="menu-item  {{ (Request::segment(2) == 'accounts' )?'menu-item-here':''}}" aria-haspopup="true">
-												<a href="{{route('accounts.index')}}" class="menu-link">
+											<li class="menu-item  {{ (Request::segment(1) == 'transactions' )?'menu-item-here':''}}" aria-haspopup="true">
+												<a href="{{route('transactions.index')}}" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
 													</i>
 													<span class="menu-text">Transactions</span>
 												</a>
 											</li>
-											<li class="menu-item  {{ (Request::segment(2) == 'accounts' )?'menu-item-here':''}}" aria-haspopup="true">
-												<a href="{{route('accounts.index')}}" class="menu-link">
+											<li class="menu-item  {{ (Request::segment(2) == 'payments' )?'menu-item-here':''}}" aria-haspopup="true">
+												<a href="{{route('payments.index')}}" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
 													</i>
 													<span class="menu-text">Payment</span>
 												</a>
 											</li>
-											<li class="menu-item  {{ (Request::segment(2) == 'accounts' )?'menu-item-here':''}}" aria-haspopup="true">
-												<a href="{{route('accounts.index')}}" class="menu-link">
+											<li class="menu-item  {{ (Request::segment(2) == 'budgets' )?'menu-item-here':''}}" aria-haspopup="true">
+												<a href="{{route('budgets.index')}}" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
 													</i>
@@ -541,7 +541,7 @@
 
 									</div>
 								</li>
-								<li class="menu-item menu-item-submenu menu-item-rel {{ (Request::segment(1) == 'accounts' )?'menu-item-here':''}}" data-menu-toggle="click" aria-haspopup="true">
+								<li class="menu-item menu-item-submenu menu-item-rel {{ (Request::segment(1) == 'reports' )?'menu-item-here':''}}" data-menu-toggle="click" aria-haspopup="true">
 									<a href="javascript:;" class="menu-link menu-toggle">
 										<span class="menu-text">Reports</span>
 										<span class="menu-desc"></span>
@@ -577,7 +577,7 @@
 
 									</div>
 								</li>
-								<li class="menu-item menu-item-submenu menu-item-rel {{ (Request::segment(1) == 'accounts' )?'menu-item-here':''}}" data-menu-toggle="click" aria-haspopup="true">
+								<li class="menu-item menu-item-submenu menu-item-rel {{ (Request::segment(1) == 'settings' )?'menu-item-here':''}}" data-menu-toggle="click" aria-haspopup="true">
 									<a href="javascript:;" class="menu-link menu-toggle">
 										<span class="menu-text">Settings</span>
 										<span class="menu-desc"></span>

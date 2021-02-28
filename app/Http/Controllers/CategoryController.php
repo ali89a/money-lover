@@ -2,37 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Budget;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $data = [
+            'contacts' => Budget::latest()->get(),
+        ];
+        return view('admin.budget.index', $data);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
-    }
+        $data = [
+            'model' => new Budget()
+          
+        ];
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+        return view('admin.budget.create', $data);
+    }
     public function store(Request $request)
     {
         //

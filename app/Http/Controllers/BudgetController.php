@@ -2,26 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contact;
+use App\Models\Budget;
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class BudgetController extends Controller
 {
     public function index()
     {
         $data = [
-            'contacts' => Contact::latest()->get(),
+            'contacts' => Budget::latest()->get(),
         ];
-        return view('admin.contact.index', $data);
+        return view('admin.budget.index', $data);
     }
     public function create()
     {
         $data = [
-            'model' => new Contact()
+            'model' => new Budget()
           
         ];
 
-        return view('admin.contact.create', $data);
+        return view('admin.budget.create', $data);
     }
 
     /**
@@ -32,16 +32,16 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\Budget  $budget
      * @return \Illuminate\Http\Response
      */
-    public function show(Contact $contact)
+    public function show(Budget $budget)
     {
         //
     }
@@ -49,10 +49,10 @@ class ContactController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\Budget  $budget
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contact $contact)
+    public function edit(Budget $budget)
     {
         //
     }
@@ -61,10 +61,10 @@ class ContactController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\Budget  $budget
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contact)
+    public function update(Request $request, Budget $budget)
     {
         //
     }
@@ -72,10 +72,10 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\Budget  $budget
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy(Budget $budget)
     {
         //
     }

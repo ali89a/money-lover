@@ -2,46 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contact;
+use App\Models\Budget;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class PaymentController extends Controller
 {
     public function index()
     {
         $data = [
-            'contacts' => Contact::latest()->get(),
+            'contacts' => Budget::latest()->get(),
         ];
-        return view('admin.contact.index', $data);
+        return view('admin.payment.index', $data);
     }
     public function create()
     {
         $data = [
-            'model' => new Contact()
+            'model' => new Budget()
           
         ];
 
-        return view('admin.contact.create', $data);
+        return view('admin.payment.create', $data);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        dd($request->all());
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function show(Contact $contact)
+    public function show(Payment $payment)
     {
         //
     }
@@ -49,10 +43,10 @@ class ContactController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contact $contact)
+    public function edit(Payment $payment)
     {
         //
     }
@@ -61,10 +55,10 @@ class ContactController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contact)
+    public function update(Request $request, Payment $payment)
     {
         //
     }
@@ -72,10 +66,10 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy(Payment $payment)
     {
         //
     }

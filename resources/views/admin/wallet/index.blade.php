@@ -13,19 +13,8 @@
                 <!--begin::Page Heading-->
                 <div class="d-flex align-items-baseline mr-5">
                     <!--begin::Page Title-->
-                    <h5 class="text-dark font-weight-bold my-2 mr-5">User List</h5>
+                    <h5 class="text-dark font-weight-bold my-2 mr-5">Wallet</h5>
                     <!--end::Page Title-->
-                    <!--begin::Breadcrumb-->
-                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
-                        <li class="breadcrumb-item">
-                            <a href="" class="text-muted">Crud</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a href="" class="text-muted">Datatables.net</a>
-                        </li>
-
-                    </ul>
-                    <!--end::Breadcrumb-->
                 </div>
                 <!--end::Page Heading-->
             </div>
@@ -80,7 +69,7 @@
                     <div class="card-body pt-2">
                         <!--begin::Item-->
                         <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block">$50,000</span>
-                        <span class="font-weight-bold text-muted font-size-sm">Milestone Reached</span>
+                        <!-- <span class="font-weight-bold text-muted font-size-sm">Milestone Reached</span> -->
                         <!--end::Item-->
                     </div>
                     <!--end::Body-->
