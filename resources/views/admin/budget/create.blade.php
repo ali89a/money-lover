@@ -41,9 +41,14 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label>Name:</label>
-                                        <input type="text" class="form-control form-control-solid" placeholder="Enter Name" />
-                                        <span class="form-text text-muted">Please enter your full name</span>
+                                        <label>Choose Category</label>
+                                        <select name="category_id" class="form-control form-control-solid">
+                                            <option value="" disabled selected>Choose Category</option>
+                                            @foreach ($categories as $category)
+                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                            @endforeach
+
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">

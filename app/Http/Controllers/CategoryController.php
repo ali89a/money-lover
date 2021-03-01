@@ -30,56 +30,38 @@ class CategoryController extends Controller
         $this->validate($request, [
             'name' => 'required'
         ]);
-
         $category = new Category();
         $category->fill($request->all());
         $category->save();
         Toastr::success('Category Created Successfully!.', '', ["closeButton" => "true", "progressBar" => "true"]);
         return redirect()->route('categories.index');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function show(Category $category)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Category $category)
     {
-        //
+        $categories = Category::all();
+        return view('admin.category.edit', compact('category','categories'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Category $category)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+
+        $category->fill($request->all());
+        $category->update();
+        Toastr::success('Category Updated Successfully!.', '', ["closeButton" => "true", "progressBar" => "true"]);
+        return redirect()->route('categories.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        Toastr::success('Category Deleted Successfully!.', '', ["closeButton" => "true", "progressBar" => "true"]);
+        return redirect()->route('categories.index');
+
     }
 }

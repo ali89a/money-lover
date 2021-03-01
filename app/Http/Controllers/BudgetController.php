@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Budget;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BudgetController extends Controller
@@ -17,7 +18,8 @@ class BudgetController extends Controller
     public function create()
     {
         $data = [
-            'model' => new Budget()
+            'model' => new Budget(),
+            'categories' => Category::latest()->get(),
           
         ];
 
