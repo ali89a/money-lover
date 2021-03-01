@@ -13,7 +13,7 @@
                 <!--begin::Page Heading-->
                 <div class="d-flex align-items-baseline mr-5">
                     <!--begin::Page Title-->
-                    <h5 class="text-dark font-weight-bold my-2 mr-5">Contact List</h5>
+                    <h5 class="text-dark font-weight-bold my-2 mr-5">Budget List</h5>
                     <!--end::Page Title-->
                 </div>
                 <!--end::Page Heading-->
@@ -31,7 +31,7 @@
                     <span class="card-icon">
                         <i class="flaticon2-favourite text-primary"></i>
                     </span>
-                    <h3 class="card-label">Contact List</h3>
+                    <h3 class="card-label">Budget List</h3>
                 </div>
                 <div class="card-toolbar">
                     <!--begin::Dropdown-->
@@ -78,7 +78,7 @@
                     </div>
                     <!--end::Dropdown-->
                     <!--begin::Button-->
-                    <a href="{{route('contacts.create')}}" class="btn btn-primary font-weight-bolder">
+                    <a href="{{route('budgets.create')}}" class="btn btn-primary font-weight-bolder">
                         <i class="la la-plus"></i>New Record</a>
                     <!--end::Button-->
                 </div>
@@ -99,7 +99,7 @@
                     <tbody>
 
 
-                        @foreach($contacts as $row)
+                        @foreach($budgets as $row)
                         <tr style="background-color: #F5F5F5; text-align: center;">
                             <td>{{ $row->id }}</td>
                             <td>{{ $row->name }}</td>

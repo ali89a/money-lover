@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 
 class ContactController extends Controller
 {
@@ -32,7 +33,17 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'mobile' => 'required',
+        ]);
+
+        $category = new Contact();
+        $category->fill($request->all());
+        $category->save();
+        Toastr::success('Contact Created Successfully!.', '', ["closeButton" => "true", "progressBar" => "true"]);
+        return redirect()->route('contacts.index');
     }
 
     /**

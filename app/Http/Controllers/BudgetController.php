@@ -10,7 +10,7 @@ class BudgetController extends Controller
     public function index()
     {
         $data = [
-            'contacts' => Budget::latest()->get(),
+            'budgets' => Budget::latest()->get(),
         ];
         return view('admin.budget.index', $data);
     }

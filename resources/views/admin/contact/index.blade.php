@@ -109,10 +109,10 @@
                                 {{-- @can('Contact Edit')--}}
 
                                 <div class="btn-group">
-                                    <a class="btn btn-info btn-sm" href="{{ route('Contacts.edit', $row->id) }}">
+                                    <a class="btn btn-info btn-sm" href="{{ route('contacts.edit', $row->id) }}">
                                         <i class="fa fa-lg fa-edit"></i>Edit
                                     </a> &nbsp;
-                                    <form method="POST" action="{{ route('Contacts.destroy',$row->id)}}" class="d-inline">
+                                    <form method="POST" action="{{ route('contacts.destroy',$row->id)}}" class="d-inline">
                                         @csrf
                                         @method('delete')
                                         <button data-name="{{ $row->name }}" type="submit" class="btn btn-danger btn-sm delete-confirm">

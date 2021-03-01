@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Budget;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 
 class CategoryController extends Controller
 {
@@ -12,22 +12,30 @@ class CategoryController extends Controller
     public function index()
     {
         $data = [
-            'contacts' => Budget::latest()->get(),
+            'categories' => Category::latest()->get(),
         ];
-        return view('admin.budget.index', $data);
+        return view('admin.category.index', $data);
     }
     public function create()
     {
         $data = [
-            'model' => new Budget()
+            'model' => new Category()
           
         ];
 
-        return view('admin.budget.create', $data);
+        return view('admin.category.create', $data);
     }
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+
+        $category = new Category();
+        $category->fill($request->all());
+        $category->save();
+        Toastr::success('Category Created Successfully!.', '', ["closeButton" => "true", "progressBar" => "true"]);
+        return redirect()->route('categories.index');
     }
 
     /**

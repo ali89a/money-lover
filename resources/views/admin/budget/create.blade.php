@@ -11,7 +11,7 @@
                 <!--begin::Page Heading-->
                 <div class="d-flex align-items-baseline mr-5">
                     <!--begin::Page Title-->
-                    <h5 class="text-dark font-weight-bold my-2 mr-5">Contact</h5>
+                    <h5 class="text-dark font-weight-bold my-2 mr-5">Budget</h5>
                     <!--end::Page Title-->
                 </div>
                 <!--end::Page Heading-->
@@ -26,16 +26,16 @@
                 <!--begin::Card-->
                 <div class="card card-custom gutter-b example example-compact">
                     <div class="card-header">
-                        <h3 class="card-title">Create New Contact</h3>
+                        <h3 class="card-title">Create New Budget</h3>
                         <div class="card-toolbar">
                             <!--begin::Button-->
-                            <a href="{{route('roles.index')}}" class="btn btn-primary font-weight-bolder">
+                            <a href="{{route('budgets.index')}}" class="btn btn-primary font-weight-bolder">
                                 <i class="la la-list"></i>See Record</a>
                             <!--end::Button-->
                         </div>
                     </div>
                     <!--begin::Form-->
-                    <form action="{{route('users.store')}}" method="POST">
+                    <form action="{{route('budgets.store')}}" method="POST">
                         @csrf
                         <div class="card-body">
                             <div class="row">

@@ -13,7 +13,7 @@
                 <!--begin::Page Heading-->
                 <div class="d-flex align-items-baseline mr-5">
                     <!--begin::Page Title-->
-                    <h5 class="text-dark font-weight-bold my-2 mr-5">Contact List</h5>
+                    <h5 class="text-dark font-weight-bold my-2 mr-5">Category List</h5>
                     <!--end::Page Title-->
                 </div>
                 <!--end::Page Heading-->
@@ -31,7 +31,7 @@
                     <span class="card-icon">
                         <i class="flaticon2-favourite text-primary"></i>
                     </span>
-                    <h3 class="card-label">Contact List</h3>
+                    <h3 class="card-label">Category List</h3>
                 </div>
                 <div class="card-toolbar">
                     <!--begin::Dropdown-->
@@ -90,8 +90,7 @@
                         <tr>
                             <th width="10%">#</th>
                             <th>Name</th>
-                            <th>Email</th>
-                            <th>Mobile</th>
+                            
                            
                             <th width="20%">Action</th>
                         </tr>
@@ -99,12 +98,11 @@
                     <tbody>
 
 
-                        @foreach($contacts as $row)
+                        @foreach($categories as $row)
                         <tr style="background-color: #F5F5F5; text-align: center;">
                             <td>{{ $row->id }}</td>
                             <td>{{ $row->name }}</td>
-                            <td>{{ $row->email }}</td>
-                            <td>{{ $row->mobile }}</td>
+                          
                             <td>
                                 {{-- @can('Contact Edit')--}}
 
