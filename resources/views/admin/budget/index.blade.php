@@ -90,9 +90,7 @@
                         <tr>
                             <th width="10%">#</th>
                             <th>Name</th>
-                            <th>Email</th>
-                            <th>Mobile</th>
-                           
+                            <th>Amount</th>
                             <th width="20%">Action</th>
                         </tr>
                     </thead>
@@ -102,17 +100,16 @@
                         @foreach($budgets as $row)
                         <tr style="background-color: #F5F5F5; text-align: center;">
                             <td>{{ $row->id }}</td>
-                            <td>{{ $row->name }}</td>
-                            <td>{{ $row->email }}</td>
-                            <td>{{ $row->mobile }}</td>
+                            <td>{{ $row->category->name??'' }}</td>
+                            <td>{{ $row->amount }}</td>
                             <td>
                                 {{-- @can('Contact Edit')--}}
 
                                 <div class="btn-group">
-                                    <a class="btn btn-info btn-sm" href="{{ route('Contacts.edit', $row->id) }}">
+                                    <a class="btn btn-info btn-sm" href="{{ route('budgets.edit', $row->id) }}">
                                         <i class="fa fa-lg fa-edit"></i>Edit
                                     </a> &nbsp;
-                                    <form method="POST" action="{{ route('Contacts.destroy',$row->id)}}" class="d-inline">
+                                    <form method="POST" action="{{ route('budgets.destroy',$row->id)}}" class="d-inline">
                                         @csrf
                                         @method('delete')
                                         <button data-name="{{ $row->name }}" type="submit" class="btn btn-danger btn-sm delete-confirm">

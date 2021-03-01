@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Budget extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'amount', 'category_id',
+    ];
+    public function category()
+    {
+       return $this->belongsTo(Category::class);
+    }
 }

@@ -13,7 +13,7 @@
                 <!--begin::Page Heading-->
                 <div class="d-flex align-items-baseline mr-5">
                     <!--begin::Page Title-->
-                    <h5 class="text-dark font-weight-bold my-2 mr-5">Accounts</h5>
+                    <h5 class="text-dark font-weight-bold my-2 mr-5">Account List</h5>
                     <!--end::Page Title-->
                 </div>
                 <!--end::Page Heading-->
@@ -23,123 +23,119 @@
     </div>
     <!--end::Subheader-->
     <div class="content flex-column-fluid" id="kt_content">
-        <div class="row">
-            <div class="col-xl-4">
-                <!--begin::List Widget 2-->
-                <div class="card card-custom bg-light-success card-stretch gutter-b">
-                    <!--begin::Header-->
-                    <div class="card-header border-0">
-                        <h3 class="card-title font-weight-bolder text-success">Bkash</h3>
-                        <div class="card-toolbar">
-                            <div class="dropdown dropdown-inline">
-                                <a href="#" class="btn btn-clean btn-hover-success btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="ki ki-bold-more-ver text-success"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
-                                    <!--begin::Naviigation-->
-                                    <ul class="navi">
 
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-shopping-cart-1"></i>
-                                                </span>
-                                                <span class="navi-text">Payment</span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="navi-icon flaticon2-calendar-8"></i>
-                                                </span>
-                                                <span class="navi-text">Transfer</span>
-                                                <span class="navi-label">
-                                                    <span class="label label-light-danger label-rounded font-weight-bold">3</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <!--end::Naviigation-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end::Header-->
-                    <!--begin::Body-->
-                    <div class="card-body pt-2">
-                        <!--begin::Item-->
-                        <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block">$50,000</span>
-                        <!-- <span class="font-weight-bold text-muted font-size-sm">Milestone Reached</span> -->
-                        <!--end::Item-->
-                    </div>
-                    <!--end::Body-->
+        <!--begin::Card-->
+        <div class="card card-custom">
+            <div class="card-header">
+                <div class="card-title">
+                    <span class="card-icon">
+                        <i class="flaticon2-favourite text-primary"></i>
+                    </span>
+                    <h3 class="card-label">Account List</h3>
                 </div>
-                <!--end::List Widget 2-->
-            </div>
-
-            <div class="col-xl-4">
-                <!--begin::List Widget 1-->
-                <div class="card card-custom card-stretch gutter-b">
-                    <!--begin::Header-->
-                    <div class="card-header border-0 pt-5">
-                        <h3 class="card-title align-items-start flex-column">
-                            <span class="card-label font-weight-bolder text-dark">Tasks Overview</span>
-                            <span class="text-muted mt-3 font-weight-bold font-size-sm">Pending 10 tasks</span>
-                        </h3>
-                        <div class="card-toolbar">
-                            <div class="dropdown dropdown-inline" data-toggle="tooltip" title="" data-placement="left" data-original-title="Quick actions">
-                                <a href="#" class="btn btn-clean btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="ki ki-bold-more-ver"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-md dropdown-menu-right" style="">
-                                    <!--begin::Naviigation-->
-                                    <ul class="navi">
-
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="flaticon2-shopping-cart-1"></i>
-                                                </span>
-                                                <span class="navi-text">Payment</span>
-                                            </a>
-                                        </li>
-                                        <li class="navi-item">
-                                            <a href="#" class="navi-link">
-                                                <span class="navi-icon">
-                                                    <i class="navi-icon flaticon2-calendar-8"></i>
-                                                </span>
-                                                <span class="navi-text">Transfer</span>
-                                                <span class="navi-label">
-                                                    <span class="label label-light-danger label-rounded font-weight-bold">3</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <!--end::Naviigation-->
-                                </div>
-                            </div>
+                <div class="card-toolbar">
+                    <!--begin::Dropdown-->
+                    <div class="dropdown dropdown-inline mr-2">
+                        <button type="button" class="btn btn-light-primary font-weight-bolder dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="la la-download"></i>Export</button>
+                        <!--begin::Dropdown Menu-->
+                        <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+                            <ul class="nav flex-column nav-hover">
+                                <li class="nav-header font-weight-bolder text-uppercase text-primary pb-2">Choose an option:</li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon la la-print"></i>
+                                        <span class="nav-text">Print</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon la la-copy"></i>
+                                        <span class="nav-text">Copy</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon la la-file-excel-o"></i>
+                                        <span class="nav-text">Excel</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon la la-file-text-o"></i>
+                                        <span class="nav-text">CSV</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon la la-file-pdf-o"></i>
+                                        <span class="nav-text">PDF</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
+                        <!--end::Dropdown Menu-->
                     </div>
-                    <!--end::Header-->
-                    <!--begin::Body-->
-                    <div class="card-body pt-8">
-                        <!--begin::Item-->
-                        <div class="d-flex align-items-center mb-10">
-                            <!--begin::Text-->
-                            <!--begin::Item-->
-                            <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block">$50,000</span>
-                            <!-- <span class="font-weight-bold text-muted font-size-sm">Milestone Reached</span> -->
-                            <!--end::Item-->
-                            <!--end::Text-->
-                        </div>
-                        <!--end::Item-->
-
-                    </div>
-                    <!--end::Body-->
+                    <!--end::Dropdown-->
+                    <!--begin::Button-->
+                    <a href="{{route('accounts.create')}}" class="btn btn-primary font-weight-bolder">
+                        <i class="la la-plus"></i>New Record</a>
+                    <!--end::Button-->
                 </div>
-                <!--end::List Widget 1-->
             </div>
+            <div class="card-body table-responsive">
+                <!--begin: Datatable-->
+                <table class="table table-bordered table-hover table-checkable" id="" style="margin-top: 13px !important">
+                    <thead>
+                        <tr style="text-align: center">
+                            <th width="10%">#</th>
+                            <th>Account Name</th>
+                            <th>Account No</th>
+                            <th>Branch</th>
+                            <th>Bank</th>
+                            <th width="20%">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
+
+                        @foreach($accounts as $row)
+                        <tr style="background-color: #F5F5F5; text-align: center;">
+                            <td>{{ $row->id }}</td>
+                            <td>{{ $row->account_name??'' }}</td>
+                            <td>{{ $row->account_no??'' }}</td>
+                            <td>{{ $row->branch_name??'' }}</td>
+                            <td>{{ $row->bank->name??'' }}</td>
+                            <td>
+                                {{-- @can('Contact Edit')--}}
+
+                                <div class="btn-group">
+                                    <a class="btn btn-info btn-sm" href="{{ route('accounts.edit', $row->id) }}">
+                                        <i class="fa fa-lg fa-edit"></i>Edit
+                                    </a> &nbsp;
+                                    <form method="POST" action="{{ route('accounts.destroy',$row->id)}}" class="d-inline">
+                                        @csrf
+                                        @method('delete')
+                                        <button data-name="{{ $row->name }}" type="submit" class="btn btn-danger btn-sm delete-confirm">
+                                            <i class="fa fa-lg fa-trash"></i>Delete
+                                        </button>
+                                    </form>
+                                    {{-- &nbsp; <a href="{{ route('Contact-reset', $row->id) }}">--}}
+                                    {{-- <i class="fa fa-refresh" aria-hidden="true" style="color: #0D5245"></i>--}}
+                                    {{-- <i class="fa fa-undo" style="color: #0D5245"></i>--}}
+                                    {{-- </a> &nbsp;--}}
+                                </div>
+
+                                {{-- @endcan--}}
+                            </td>
+                        </tr>
+                        @endforeach
+
+
+                    </tbody>
+                </table>
+                <!--end: Datatable-->
+            </div>
         </div>
         <!--end::Card-->
     </div>

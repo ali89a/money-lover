@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bank;
 use App\Models\Account;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 
 class AccountController extends Controller
 {
@@ -18,16 +20,26 @@ class AccountController extends Controller
     public function create()
     {
         $data = [
+            'banks' => Bank::latest()->get(),
             'model' => new Account()
           
         ];
-
         return view('admin.account.create', $data);
     }
 
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'account_name' => 'required',
+            'branch_name' => 'required',
+            'account_no' => 'required',
+            'bank_id' => 'required',
+        ]);
+        $account = new Account();
+        $account->fill($request->all());
+        $account->save();
+        Toastr::success('Account Created Successfully!.', '', ["closeButton" => "true", "progressBar" => "true"]);
+        return redirect()->route('accounts.index');
     }
 
     /**

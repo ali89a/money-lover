@@ -11,7 +11,7 @@
                 <!--begin::Page Heading-->
                 <div class="d-flex align-items-baseline mr-5">
                     <!--begin::Page Title-->
-                    <h5 class="text-dark font-weight-bold my-2 mr-5">Contact</h5>
+                    <h5 class="text-dark font-weight-bold my-2 mr-5">Account</h5>
                     <!--end::Page Title-->
                 </div>
                 <!--end::Page Heading-->
@@ -26,38 +26,51 @@
                 <!--begin::Card-->
                 <div class="card card-custom gutter-b example example-compact">
                     <div class="card-header">
-                        <h3 class="card-title">Create New Contact</h3>
+                        <h3 class="card-title">Create New Account</h3>
                         <div class="card-toolbar">
                             <!--begin::Button-->
-                            <a href="{{route('roles.index')}}" class="btn btn-primary font-weight-bolder">
+                            <a href="{{route('accounts.index')}}" class="btn btn-primary font-weight-bolder">
                                 <i class="la la-list"></i>See Record</a>
                             <!--end::Button-->
                         </div>
                     </div>
                     <!--begin::Form-->
-                    <form action="{{route('users.store')}}" method="POST">
+                    <form action="{{route('accounts.store')}}" method="POST">
                         @csrf
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-lg-4">
+
+                                <div class="col-lg-3">
                                     <div class="form-group">
-                                        <label>Name:</label>
-                                        <input type="text" class="form-control form-control-solid" placeholder="Enter Name" />
+                                        <label>Account Name:</label>
+                                        <input type="text" name="account_name" class="form-control form-control-solid" placeholder="Enter Email" />
                                         <span class="form-text text-muted">Please enter your full name</span>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-3">
                                     <div class="form-group">
-                                        <label>Email:</label>
-                                        <input type="text" class="form-control form-control-solid" placeholder="Enter Email" />
+                                        <label>Account No:</label>
+                                        <input type="text" name="account_no" class="form-control form-control-solid" placeholder="Enter Email" />
                                         <span class="form-text text-muted">Please enter your full name</span>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-3">
                                     <div class="form-group">
-                                        <label>Mobile:</label>
-                                        <input type="text" class="form-control form-control-solid" placeholder="Enter Mobile" />
-                                        <span class="form-text text-muted">We'll never share your email with anyone else</span>
+                                        <label>Branch:</label>
+                                        <input type="text" name="branch_name" class="form-control form-control-solid" placeholder="Enter Email" />
+                                        <span class="form-text text-muted">Please enter your full name</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label>Choose Bank</label>
+                                        <select name="bank_id" class="form-control form-control-solid">
+                                            <option value="" disabled selected>Choose Bank</option>
+                                            @foreach ($banks as $bank)
+                                            <option value="{{$bank->id}}">{{$bank->name}}</option>
+                                            @endforeach
+
+                                        </select>
                                     </div>
                                 </div>
                             </div>
