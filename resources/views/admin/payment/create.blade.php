@@ -11,7 +11,7 @@
                 <!--begin::Page Heading-->
                 <div class="d-flex align-items-baseline mr-5">
                     <!--begin::Page Title-->
-                    <h5 class="text-dark font-weight-bold my-2 mr-5">Contact</h5>
+                    <h5 class="text-dark font-weight-bold my-2 mr-5">Payments</h5>
                     <!--end::Page Title-->
                 </div>
                 <!--end::Page Heading-->
@@ -26,7 +26,7 @@
                 <!--begin::Card-->
                 <div class="card card-custom gutter-b example example-compact">
                     <div class="card-header">
-                        <h3 class="card-title">Create New Contact</h3>
+                        <h3 class="card-title">Create New Payment</h3>
                         <div class="card-toolbar">
                             <!--begin::Button-->
                             <a href="{{route('roles.index')}}" class="btn btn-primary font-weight-bolder">
@@ -48,16 +48,26 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label>Email:</label>
-                                        <input type="text" class="form-control form-control-solid" placeholder="Enter Email" />
-                                        <span class="form-text text-muted">Please enter your full name</span>
+                                        <label>Choose Category</label>
+                                        <select name="category_id" class="form-control form-control-solid">
+                                            <option value="" disabled selected>Choose Category</option>
+                                            @foreach ($categories as $category)
+                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                            @endforeach
+
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label>Mobile:</label>
-                                        <input type="text" class="form-control form-control-solid" placeholder="Enter Mobile" />
-                                        <span class="form-text text-muted">We'll never share your email with anyone else</span>
+                                        <label>Choose Category</label>
+                                        <select name="category_id" class="form-control form-control-solid">
+                                            <option value="" disabled selected>Choose Contact</option>
+                                            @foreach ($contacts as $contact)
+                                            <option value="{{$contact->id}}">{{$contact->name}}</option>
+                                            @endforeach
+
+                                        </select>
                                     </div>
                                 </div>
                             </div>

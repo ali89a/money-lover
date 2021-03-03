@@ -11,7 +11,7 @@ class TransactionController extends Controller
     public function index()
     {
         $data = [
-            'contacts' => Budget::latest()->get(),
+            'transactions ' => Transaction::latest()->get(),
         ];
         return view('admin.transaction.index', $data);
     }

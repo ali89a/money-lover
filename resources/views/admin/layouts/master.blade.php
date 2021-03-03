@@ -68,8 +68,8 @@
 						<!--begin::Left-->
 						<div class="d-none d-lg-flex align-items-center mr-3">
 							<!--begin::Logo-->
-							<a href="index.html" class="mr-20">
-								<img alt="Logo" src="{{asset('assets/media/logos/logo-default.png')}}" class="logo-default max-h-35px" />
+							<a href="{{url('/')}}" class="mr-20">
+								<img alt="Logo" src="{{asset('assets/media/logos/logo.png')}}" class="logo-default max-h-35px" />
 							</a>
 							<!--end::Logo-->
 						</div>
@@ -446,7 +446,7 @@
 											<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
 												@csrf
 											</form>
-											<a href="custom/user/login-v2.html" target="_blank" class="btn btn-clean font-weight-bold">Upgrade Plan</a>
+											<a href="custom/user/login-v2.html" class="btn btn-light-success font-weight-bold">Profile</a>
 										</div>
 										<!--end::Footer-->
 									</div>
@@ -591,14 +591,6 @@
 														<span></span>
 													</i>
 													<span class="menu-text">Currency</span>
-												</a>
-											</li>
-											<li class="menu-item  {{ (Request::segment(1) == 'categories' )?'menu-item-here':''}}" aria-haspopup="true">
-												<a href="{{route('categories.index')}}" class="menu-link">
-													<i class="menu-bullet menu-bullet-dot">
-														<span></span>
-													</i>
-													<span class="menu-text">Profile</span>
 												</a>
 											</li>
 										</ul>
@@ -929,7 +921,7 @@
 	<!-- Google analytics script-->
 	<script type="text/javascript">
 		@if($errors->any())
-		@foreach($errors-> all() as $error)
+		@foreach($errors->all() as $error)
 		toastr.error('{{$error}}', 'Error', {
 			closeButton: true,
 			progressBar: true,

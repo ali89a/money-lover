@@ -13,7 +13,7 @@
                 <!--begin::Page Heading-->
                 <div class="d-flex align-items-baseline mr-5">
                     <!--begin::Page Title-->
-                    <h5 class="text-dark font-weight-bold my-2 mr-5">Contact List</h5>
+                    <h5 class="text-dark font-weight-bold my-2 mr-5">Transaction List</h5>
                     <!--end::Page Title-->
                 </div>
                 <!--end::Page Heading-->
@@ -31,7 +31,7 @@
                     <span class="card-icon">
                         <i class="flaticon2-favourite text-primary"></i>
                     </span>
-                    <h3 class="card-label">Contact List</h3>
+                    <h3 class="card-label">Transaction List</h3>
                 </div>
                 <div class="card-toolbar">
                     <!--begin::Dropdown-->
@@ -77,10 +77,6 @@
                         <!--end::Dropdown Menu-->
                     </div>
                     <!--end::Dropdown-->
-                    <!--begin::Button-->
-                    <a href="{{route('contacts.create')}}" class="btn btn-primary font-weight-bolder">
-                        <i class="la la-plus"></i>New Record</a>
-                    <!--end::Button-->
                 </div>
             </div>
             <div class="card-body table-responsive">
@@ -99,36 +95,7 @@
                     <tbody>
 
 
-                        @foreach($contacts as $row)
-                        <tr style="background-color: #F5F5F5; text-align: center;">
-                            <td>{{ $row->id }}</td>
-                            <td>{{ $row->name }}</td>
-                            <td>{{ $row->email }}</td>
-                            <td>{{ $row->mobile }}</td>
-                            <td>
-                                {{-- @can('Contact Edit')--}}
-
-                                <div class="btn-group">
-                                    <a class="btn btn-info btn-sm" href="{{ route('Contacts.edit', $row->id) }}">
-                                        <i class="fa fa-lg fa-edit"></i>Edit
-                                    </a> &nbsp;
-                                    <form method="POST" action="{{ route('Contacts.destroy',$row->id)}}" class="d-inline">
-                                        @csrf
-                                        @method('delete')
-                                        <button data-name="{{ $row->name }}" type="submit" class="btn btn-danger btn-sm delete-confirm">
-                                            <i class="fa fa-lg fa-trash"></i>Delete
-                                        </button>
-                                    </form>
-                                    {{-- &nbsp; <a href="{{ route('Contact-reset', $row->id) }}">--}}
-                                    {{-- <i class="fa fa-refresh" aria-hidden="true" style="color: #0D5245"></i>--}}
-                                    {{-- <i class="fa fa-undo" style="color: #0D5245"></i>--}}
-                                    {{-- </a> &nbsp;--}}
-                                </div>
-
-                                {{-- @endcan--}}
-                            </td>
-                        </tr>
-                        @endforeach
+                     
 
 
                     </tbody>

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Budget;
+use App\Models\Category;
+use App\Models\Contact;
 use App\Models\Payment;
 use Illuminate\Http\Request;
 
@@ -11,14 +12,16 @@ class PaymentController extends Controller
     public function index()
     {
         $data = [
-            'contacts' => Budget::latest()->get(),
+            'payments' => Payment::latest()->get(),
         ];
         return view('admin.payment.index', $data);
     }
     public function create()
     {
         $data = [
-            'model' => new Budget()
+            'model' => new Payment(),
+            'categories' => Category::latest()->get(),
+            'contacts' => Contact::latest()->get(),
           
         ];
 
