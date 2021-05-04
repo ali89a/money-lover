@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('content')
-<!--begin::Content Wrapper-->
+
 <div class="main d-flex flex-column flex-row-fluid">
     <!--begin::Subheader-->
     <div class="subheader py-2 py-lg-4" id="kt_subheader">

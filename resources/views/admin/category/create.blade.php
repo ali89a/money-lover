@@ -2,44 +2,45 @@
 @section('styles')
 @endsection
 @section('content')
-<div class="main d-flex flex-column flex-row-fluid">
-    <!--begin::Subheader-->
-    <div class="subheader py-2 py-lg-4" id="kt_subheader">
-        <div class="w-100 d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
-            <!--begin::Info-->
-            <div class="d-flex align-items-center flex-wrap mr-1">
-                <!--begin::Page Heading-->
-                <div class="d-flex align-items-baseline mr-5">
-                    <!--begin::Page Title-->
-                    <h5 class="text-dark font-weight-bold my-2 mr-5">Category</h5>
-                    <!--end::Page Title-->
-                </div>
-                <!--end::Page Heading-->
-            </div>
-            <!--end::Info-->
-        </div>
-    </div>
-    <!--end::Subheader-->
-    <div class="content flex-column-fluid" id="kt_content">
-        <div class="row">
-            <div class="col-md-12">
-                <!--begin::Card-->
-                <div class="card card-custom gutter-b example example-compact">
-                    <div class="card-header">
-                        <h3 class="card-title">Create New Category</h3>
-                        <div class="card-toolbar">
-                            <!--begin::Button-->
-                            <a href="{{route('categories.index')}}" class="btn btn-primary font-weight-bolder">
-                                <i class="la la-list"></i>See Record</a>
-                            <!--end::Button-->
-                        </div>
+<div class="content-wrapper">
+    <div class="content-header row">
+        <div class="content-header-left col-md-9 col-12 mb-2">
+            <div class="row breadcrumbs-top">
+                <div class="col-12">
+                    <h2 class="content-header-title float-left mb-0">Category</h2>
+                    <div class="breadcrumb-wrapper">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active">Create New Category
+                            </li>
+                        </ol>
                     </div>
-                    <!--begin::Form-->
-                    <form action="{{route('categories.store')}}" method="POST">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="content-body">
+        <!-- Tooltip validations start -->
+        <section class="tooltip-validations" id="tooltip-validation">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                <a href="{{route('categories.index')}}" class="btn btn-primary font-weight-bolder">
+                                <i class="la la-list"></i>See Record</a>
+                                
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                        <!--begin::Form-->
+                        <form action="{{route('categories.store')}}" method="POST">
                         @csrf
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-lg-12">
                                     <div class="form-group">
                                         <label>Name:</label>
                                         <input type="text" name="name" class="form-control form-control-solid" placeholder="Enter Name" />
@@ -54,16 +55,15 @@
                             <button type="reset" class="btn btn-secondary">Cancel</button>
                         </div>
                     </form>
-                    <!--end::Form-->
+                        <!--end::Form-->
+                           
+                        </div>
+                    </div>
                 </div>
-                <!--end::Card-->
-
-
             </div>
-
-        </div>
+        </section>
+        <!-- Tooltip validations end -->
     </div>
-    <!--end::Content-->
 </div>
 @endsection
 @section('scripts')

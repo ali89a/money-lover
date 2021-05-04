@@ -3,17 +3,41 @@
 @endsection
 @section('content')
 
-<div class="app-title">
-    <div>
-        <h1><i class="fa fa-users" aria-hidden="true"></i>User</h1>
+<div class="content-wrapper">
+    <div class="content-header row">
+        <div class="content-header-left col-md-9 col-12 mb-2">
+            <div class="row breadcrumbs-top">
+                <div class="col-12">
+                    <h2 class="content-header-title float-left mb-0">User</h2>
+                    <div class="breadcrumb-wrapper">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active">User Edit
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <ul class="app-breadcrumb breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ route('home') }}"><i class="fa fa-home fa-lg"></a></i></li>
-        <li class="breadcrumb-item">User Edit</a></li>
-    </ul>
-</div>
-<div class="tile">
-    <form action="{{route('user.update',$user->id)}}" method="POST" class="form-group">
+    <div class="content-body">
+        <!-- Tooltip validations start -->
+        <section class="tooltip-validations" id="tooltip-validation">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                <a href="{{route('users.index')}}" class="btn btn-primary font-weight-bolder">
+                                <i class="la la-list"></i>See Record</a>
+                                
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                         
+                         <form action="{{route('users.update',$user->id)}}" method="POST" class="form-group">
         @csrf
         @method('put')
         <div class="tile-title-w-btn">
@@ -32,8 +56,14 @@
 
         {{ Form::submit('Submit') }}
     </form>
-
-
+                    <!--end::Form-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Tooltip validations end -->
+    </div>
 </div>
 @endsection
 @section('js')
@@ -60,4 +90,3 @@
 
         $('#demoSelect').select2();
 </script>
-@endsection
